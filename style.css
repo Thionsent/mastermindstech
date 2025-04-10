@@ -1,0 +1,238 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f0f8ff; /* Light background */
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack header and container */
+    justify-content: center;
+    align-items: center;
+}
+header {
+    background-color: #00BFFF; /* Primary color for header background */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+.container {
+    width: 90%;
+    max-width: 1000px; /* Slightly wider max-width */
+    background-color: #e0f7fa; /* Soft light blue background */
+    padding: 60px; /* Increased padding for a more spacious feel */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px; /* Increased gap */
+    box-sizing: border-box;
+    margin-top: 30px; /* Add some space between header and container */
+    margin-bottom: 30px; /* Add some space at the bottom */
+    opacity: 0; /* Initially set opacity to 0 for fade-in */
+    animation: fadeIn 0.5s ease-out 0.2s forwards; /* Apply fade-in animation */
+}
+.contact-details, .contact-form {
+    padding: 30px;
+    transition: transform 0.2s ease-in-out; /* Add transition for smooth scaling */
+}
+.contact-details {
+    border-right: 1px solid #eee; /* Subtle visual separator */
+}
+.contact-details:hover, .contact-form:hover {
+    transform: scale(1.02); /* Scale up slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Slightly enhance the shadow */
+}
+.contact-details h2, .contact-form h2, .social-links h2 {
+    color: #00BFFF; /* Primary color for headings */
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #FFFF0B; /* Yellow accent under headings */
+    font-size: 2.2em; /* Slightly larger heading font */
+}
+.contact-details p, .contact-details address {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #555;
+}
+.contact-details a {
+    color: #00BFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+.contact-details a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+.form-group {
+    margin-bottom: 25px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #444;
+    font-size: 1.1em;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+.form-group textarea {
+    min-height: 150px;
+}
+.contact-form button[type="submit"] {
+    background-color: #00BFFF; /* Primary color for button */
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.contact-form button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+}
+.social-links {
+    grid-column: 1 / 3;
+    padding: 40px;
+    text-align: center;
+    background-color: #FFFF0B; /* Yellow accent background for social links */
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out; /* Add transition for background color */
+}
+.social-links:hover {
+    background-color: #fffa65; /* A slightly lighter shade of yellow */
+}
+.social-links h2 {
+    color: #00BFFF;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #00BFFF; /* Blue accent under social links heading */
+    padding-bottom: 15px;
+    font-size: 2em;
+}
+.social-links a {
+    display: inline-block;
+    margin: 15px;
+    font-size: 28px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); /* Added transition for transform with a slight ease-out effect */
+}
+.social-links a:hover {
+    color: #00BFFF;
+    transform: translateY(-5px) scale(1.05); /* Move up slightly and scale up */
+}
+/* Specific social media icons (you might need to include a font library like Font Awesome) */
+.social-links a.facebook:before { content: '\f09a'; font-family: 'Font Awesome 5 Brands'; }
+.social-links a.twitter:before { content: '\f099'; font-family: 'Font Awesome 5 Brands'; }
+.social-links a.linkedin:before { content: '\f0e1'; font-family: 'Font Awesome 5 Brands'; }
+.social-links a.instagram:before { content: '\f16d'; font-family: 'Font Awesome 5 Brands'; }
+
+.intro-section {
+    grid-column: 1 / 3; /* Span across both columns */
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 40px 20px; /* Add some vertical padding */
+    background-image: url('finger.jpg'); /* Using your provided image path */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Ensure text is readable on the image */
+    border-radius: 8px; /* Match container border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+.intro-section p {
+    font-size: 1.2em;
+    margin: 0 auto; /* Center the paragraph */
+    max-width: 700px; /* Limit paragraph width for better readability */
+}
+.team-photo {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.office-photo {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.contact-details > div { /* Container for text and image in contact details */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Keep header on top */
+        justify-content: flex-start; /* Align items from the top */
+        padding-top: 20px; /* Add some top padding */
+    }
+    header {
+        padding: 15px 0;
+        font-size: 0.9em;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    .container {
+        grid-template-columns: 1fr;
+        width: 95%;
+        padding: 40px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .contact-details {
+        border-right: none; /* Remove separator on smaller screens */
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee; /* Add bottom separator */
+    }
+    .social-links {
+        text-align: center; /* Center social links on smaller screens */
+        padding: 30px;
+    }
+    .intro-section {
+        margin-bottom: 20px;
+        padding: 30px 15px;
+    }
+    .team-photo, .office-photo {
+        max-width: 100%;
+    }
+    .contact-details > div {
+        flex-direction: column;
+    }
+}
+
+/* Keyframe animation for fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
