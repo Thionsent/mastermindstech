@@ -1,18 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - BranTech Solutions</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+=======
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - BranTech Solutions</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+>>>>>>> 9cbeaa91d8e990d4251f5710509041a253a01891
 </head>
 <body>
 
-    <header>
-        <h1>BranTech Solutions</h1>
-    </header>
+  <header>
+    <h1>BranTech Solutions</h1>
+  </header>
 
+<<<<<<< HEAD
+  <div class="container">
+    <div class="signup-section">
+      <h2>Create an Account</h2>
+      <p>Join BranTech Solutions to access our latest tech solutions and updates!</p>
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required />
+=======
     <div class="container">
         <div class="signup-section">
             <h2>Create an Account</h2>
@@ -45,8 +76,52 @@
             <a href="https://twitter.com/YourTwitterHandle" target="_blank" class="twitter"><span class="sr-only">Twitter</span></a>
             <a href="https://www.linkedin.com/company/YourLinkedInPage" target="_blank" class="linkedin"><span class="sr-only">LinkedIn</span></a>
             <a href="https://www.instagram.com/YourInstagramHandle" target="_blank" class="instagram"><span class="sr-only">Instagram</span></a>
+>>>>>>> 9cbeaa91d8e990d4251f5710509041a253a01891
         </div>
+        <button type="submit">Sign Up</button>
+      </form>
     </div>
+  </div>
 
+  <script>
+    // Your Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyA1XLtgej7QTdpJtKqM57v_6FdIW9Ae95Y",
+  authDomain: "mastermind-20d29.firebaseapp.com",
+  databaseURL: "https://mastermind-20d29-default-rtdb.firebaseio.com",
+  projectId: "mastermind-20d29",
+  storageBucket: "mastermind-20d29.firebasestorage.app",
+  messagingSenderId: "1088866613233",
+  appId: "1:1088866613233:web:c45cc9ca39c40c0332b650",
+  measurementId: "G-NRXG2M9JNT"
+};
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // Handle Form Submission
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const fullname = document.getElementById('fullname').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      const userRef = database.ref('users');
+      const newUserRef = userRef.push();
+
+      newUserRef.set({
+        fullname: fullname,
+        email: email,
+        password: password // Do NOT store plaintext passwords in real apps
+      }).then(() => {
+        alert('Sign up successful!');
+        document.getElementById('signupForm').reset();
+      }).catch((error) => {
+        alert('Error: ' + error.message);
+      });
+    });
+  </script>
 </body>
 </html>
