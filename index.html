@@ -1,20 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sign Up - BranTech Solutions</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
-=======
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - BranTech Solutions</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
->>>>>>> 9cbeaa91d8e990d4251f5710509041a253a01891
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(120deg, #007cf0, #00dfd8);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .signup-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .signup-section p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    button[type="submit"] {
+      background-color: #00dfd8;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #00c5c5;
+      transform: scale(1.03);
+    }
+
+    .social-links {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .social-links a {
+      margin: 0 0.5rem;
+      color: #fff;
+      font-size: 1.5rem;
+      transition: 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #000;
+    }
+  </style>
 </head>
 <body>
 
@@ -22,7 +110,6 @@
     <h1>BranTech Solutions</h1>
   </header>
 
-<<<<<<< HEAD
   <div class="container">
     <div class="signup-section">
       <h2>Create an Account</h2>
@@ -43,64 +130,36 @@
         <div class="form-group">
           <label for="confirm-password">Confirm Password:</label>
           <input type="password" id="confirm-password" name="confirm-password" required />
-=======
-    <div class="container">
-        <div class="signup-section">
-            <h2>Create an Account</h2>
-            <p>Join BranTech Solutions to access our latest tech solutions and updates!</p>
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="fullname">Full Name:</label>
-                    <input type="text" id="fullname" name="fullname" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="form-group">
-                    <label for="confirm-password">Confirm Password:</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
-                </div>
-                <button type="submit">Sign Up</button>
-            </form>
-        </div>
-
-        <div class="social-links">
-            <h2>Follow Us</h2>
-            <p>Stay connected with us through social media!</p>
-            <a href="https://www.facebook.com/YourFacebookPage" target="_blank" class="facebook"><span class="sr-only">Facebook</span></a>
-            <a href="https://twitter.com/YourTwitterHandle" target="_blank" class="twitter"><span class="sr-only">Twitter</span></a>
-            <a href="https://www.linkedin.com/company/YourLinkedInPage" target="_blank" class="linkedin"><span class="sr-only">LinkedIn</span></a>
-            <a href="https://www.instagram.com/YourInstagramHandle" target="_blank" class="instagram"><span class="sr-only">Instagram</span></a>
->>>>>>> 9cbeaa91d8e990d4251f5710509041a253a01891
         </div>
         <button type="submit">Sign Up</button>
       </form>
     </div>
+
+    <div class="social-links">
+      <h2>Follow Us</h2>
+      <a href="#" class="fab fa-facebook"></a>
+      <a href="#" class="fab fa-twitter"></a>
+      <a href="#" class="fab fa-linkedin"></a>
+      <a href="#" class="fab fa-instagram"></a>
+    </div>
   </div>
 
   <script>
-    // Your Firebase config
-const firebaseConfig = {
-  apiKey: "AIzaSyA1XLtgej7QTdpJtKqM57v_6FdIW9Ae95Y",
-  authDomain: "mastermind-20d29.firebaseapp.com",
-  databaseURL: "https://mastermind-20d29-default-rtdb.firebaseio.com",
-  projectId: "mastermind-20d29",
-  storageBucket: "mastermind-20d29.firebasestorage.app",
-  messagingSenderId: "1088866613233",
-  appId: "1:1088866613233:web:c45cc9ca39c40c0332b650",
-  measurementId: "G-NRXG2M9JNT"
-};
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyA1XLtgej7QTdpJtKqM57v_6FdIW9Ae95Y",
+      authDomain: "mastermind-20d29.firebaseapp.com",
+      databaseURL: "https://mastermind-20d29-default-rtdb.firebaseio.com",
+      projectId: "mastermind-20d29",
+      storageBucket: "mastermind-20d29.appspot.com",
+      messagingSenderId: "1088866613233",
+      appId: "1:1088866613233:web:c45cc9ca39c40c0332b650",
+      measurementId: "G-NRXG2M9JNT"
+    };
 
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const database = firebase.database();
 
-    // Handle Form Submission
     document.getElementById('signupForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
@@ -114,7 +173,7 @@ const firebaseConfig = {
       newUserRef.set({
         fullname: fullname,
         email: email,
-        password: password // Do NOT store plaintext passwords in real apps
+        password: password // ⚠ In production, never store plaintext passwords!
       }).then(() => {
         alert('Sign up successful!');
         document.getElementById('signupForm').reset();
