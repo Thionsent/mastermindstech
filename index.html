@@ -176,7 +176,7 @@
         password: password // ⚠ In production, never store plaintext passwords!
       }).then(() => {
         alert('Sign up successful!');
-        document.getElementById('signupForm').reset();
+        window.location.href = "login.html"; // Redirect to login page
       }).catch((error) => {
         alert('Error: ' + error.message);
       });
