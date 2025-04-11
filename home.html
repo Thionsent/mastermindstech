@@ -2,99 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BranTech E-Library</title>
-   <link rel="stylesheet" href="styleshome.css" />
+  <link rel="stylesheet" href="styleshome.css" />
 </head>
 <body>
 
-  <!-- Header Section -->
   <header>
     <h1>BranTech E-Library</h1>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="categories.html">Categories</a></li>
-        <li><a href="authors.html">Authors</a></li>
-        <li><a href="search.html">Search</a></li>
-        <li><a href="login.html">Login/Register</a></li>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Books</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Authors</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Login/Register</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section>
-    <div>
-      <img src="images/hero-banner.jpg" alt="Bookshelf background" />
-      <h2>Discover a World of Knowledge at Your Fingertips</h2>
-      <p>Welcome to BranTech E-Library – your one-stop digital hub for exploring and reading a wide variety of books online. Whether you're a student, professional, or just a curious mind, we've got something for you!</p>
-      <form action="search.html" method="get">
-        <input type="text" name="query" placeholder="Search for books..." />
-        <button type="submit">Search</button>
-      </form>
-    </div>
-  </section>
+  <main>
 
-  <!-- Featured Books Section -->
-  <section>
-    <h2>Featured Reads</h2>
-   <div class="book-grid">
-  <article>
-    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - The Digital Frontier" />
-    <h3>The Digital Frontier</h3>
-    <p>by Jane Techwell</p>
-  </article>
-  <article>
-    <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - Echoes of the Past" />
-    <h3>Echoes of the Past</h3>
-    <p>by David M. Howard</p>
-  </article>
-  <article>
-    <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - A Tale of Tomorrow" />
-    <h3>A Tale of Tomorrow</h3>
-    <p>by Alicia Night</p>
-  </article>
-  <article>
-    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - Whispers of the Wild" />
-    <h3>Whispers of the Wild</h3>
-    <p>by Oliver Green</p>
-  </article>
-</div>
+    <!-- Hero Section -->
+    <section class="hero animate">
+      <div class="hero-text">
+        <h2>Discover a World of Knowledge at Your Fingertips</h2>
+        <p>Welcome to BranTech E-Library, your gateway to thousands of books, articles, and resources.</p>
+        <input type="text" placeholder="Search books..." class="search-bar" />
+      </div>
+    </section>
 
-  </section>
+    <!-- Featured Books -->
+    <section class="featured animate">
+      <h2>Featured Reads</h2>
+      <div class="book-grid">
+        <article class="book">
+          <img src="https://via.placeholder.com/150x220" alt="Book 1" />
+          <h3>Book Title One</h3>
+          <p>by Author A</p>
+        </article>
+        <article class="book">
+          <img src="https://via.placeholder.com/150x220" alt="Book 2" />
+          <h3>Book Title Two</h3>
+          <p>by Author B</p>
+        </article>
+        <article class="book">
+          <img src="https://via.placeholder.com/150x220" alt="Book 3" />
+          <h3>Book Title Three</h3>
+          <p>by Author C</p>
+        </article>
+        <article class="book">
+          <img src="https://via.placeholder.com/150x220" alt="Book 4" />
+          <h3>Book Title Four</h3>
+          <p>by Author D</p>
+        </article>
+      </div>
+    </section>
 
-  <!-- Categories Section -->
-  <section>
-    <h2>Explore by Category</h2>
-    <ul>
-      <li><a href="#">Fiction</a></li>
-      <li><a href="#">Science</a></li>
-      <li><a href="#">History</a></li>
-      <li><a href="#">Mystery</a></li>
-      <li><a href="#">Biographies</a></li>
-      <li><a href="#">Technology</a></li>
-    </ul>
-  </section>
+    <!-- Categories -->
+    <section class="categories animate">
+      <h2>Explore by Category</h2>
+      <div class="category-grid">
+        <a href="#">Fiction</a>
+        <a href="#">Science</a>
+        <a href="#">History</a>
+        <a href="#">Technology</a>
+        <a href="#">Mystery</a>
+        <a href="#">Biography</a>
+      </div>
+    </section>
 
-  <!-- Call to Action Section -->
-  <section>
-    <h2>Unlock Unlimited Access</h2>
-    <p>Join BranTech E-Library today and explore thousands of titles for free. Your reading journey begins here.</p>
-    <a href="signup.html">Sign Up</a> or <a href="books.html">Browse Books</a>
-  </section>
+    <!-- Call to Action -->
+    <section class="cta animate">
+      <h2>Unlock Unlimited Access</h2>
+      <p>Create an account and explore the full collection of resources.</p>
+      <a href="#" class="cta-btn">Sign Up</a>
+    </section>
 
-  <!-- Footer -->
+  </main>
+
   <footer>
     <p>© 2025 BranTech E-Library. All rights reserved.</p>
-    <nav>
-      <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-      </ul>
-    </nav>
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Privacy Policy</a>
+    </div>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.animate').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 
 </body>
 </html>
