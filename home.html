@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - BranTech Solutions</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome to BranTech Solutions!</h1>
+    <p>You are successfully logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyA1XLtgej7QTdpJtKqM57v_6FdIW9Ae95Y",
+      authDomain: "mastermind-20d29.firebaseapp.com",
+      projectId: "mastermind-20d29",
+      storageBucket: "mastermind-20d29.appspot.com",
+      messagingSenderId: "1088866613233",
+      appId: "1:1088866613233:web:c45cc9ca39c40c0332b650"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (!user) {
+        window.location.href = "login.html";
+      }
+    });
+
+    function logout() {
+      firebase.auth().signOut()
+        .then(() => {
+          window.location.href = "login.html";
+        });
+    }
+  </script>
+</body>
+</html>
