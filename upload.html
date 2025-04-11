@@ -4,58 +4,98 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Upload Book - BranTech E-Library</title>
-  <link rel="stylesheet" href="stylesupload.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <header>
-    <h1>Upload a Book</h1>
+    <h1>BranTech E-Library</h1>
     <nav>
-      <a href="home.html">Home</a>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="authors.html">Authors</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="login.html">Login/Register</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <form id="uploadForm">
-      <label>Book Title:</label>
-      <input type="text" id="title" required />
+    <h2>Upload New Book</h2>
+    <p>Only administrators can upload new books.</p>
 
-      <label>Author:</label>
-      <input type="text" id="author" required />
-
-      <label>Category:</label>
-      <input type="text" id="category" required />
-
-      <label>Google Drive Link:</label>
-      <input type="url" id="driveLink" placeholder="Paste the shareable link here" required />
-
+    <!-- Upload Form -->
+    <form id="uploadForm" style="display: none;">
+      <div>
+        <label for="bookTitle">Book Title:</label>
+        <input type="text" id="bookTitle" name="bookTitle" required />
+      </div>
+      <div>
+        <label for="bookAuthor">Author:</label>
+        <input type="text" id="bookAuthor" name="bookAuthor" required />
+      </div>
+      <div>
+        <label for="bookPDF">PDF File:</label>
+        <input type="file" id="bookPDF" name="bookPDF" accept="application/pdf" required />
+      </div>
       <button type="submit">Upload Book</button>
     </form>
 
-    <p id="successMsg"></p>
+    <div id="errorMessage" style="display: none; color: red;">
+      You must be an administrator to upload books.
+    </div>
   </main>
 
-  <script>
-    const uploadForm = document.getElementById('uploadForm');
-    const successMsg = document.getElementById('successMsg');
+  <footer>
+    <p>© 2025 BranTech E-Library. All rights reserved.</p>
+  </footer>
 
-    uploadForm.addEventListener('submit', (e) => {
+  <script type="module">
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+    const auth = getAuth();
+    const database = getDatabase();
+    const adminEmail = "admin@example.com"; // Replace with actual admin email
+
+    // Check if the user is admin and show the upload form
+    onAuthStateChanged(auth, (user) => {
+      if (user && user.email === adminEmail) {
+        // Show the upload form if user is admin
+        document.getElementById("uploadForm").style.display = "block";
+      } else {
+        // Show error message and prevent access to upload form
+        document.getElementById("errorMessage").style.display = "block";
+        setTimeout(() => {
+          window.location.href = "index.html"; // Redirect to home after 3 seconds
+        }, 3000);
+      }
+    });
+
+    // Handle form submission to upload book
+    document.getElementById("uploadForm").addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const book = {
-        title: document.getElementById('title').value,
-        author: document.getElementById('author').value,
-        category: document.getElementById('category').value,
-        driveLink: document.getElementById('driveLink').value
-      };
+      const title = document.getElementById("bookTitle").value;
+      const author = document.getElementById("bookAuthor").value;
+      const pdfFile = document.getElementById("bookPDF").files[0];
 
-      // Save book to localStorage (for now)
-      const books = JSON.parse(localStorage.getItem('books') || '[]');
-      books.push(book);
-      localStorage.setItem('books', JSON.stringify(books));
-
-      successMsg.textContent = 'Book uploaded successfully!';
-      uploadForm.reset();
+      // Upload to Firebase (dummy data for now, implement actual file upload logic if necessary)
+      const bookRef = ref(database, 'books/' + title);
+      set(bookRef, {
+        title: title,
+        author: author,
+        pdfLink: "path_to_pdf_on_drive_or_firebase" // Replace with actual link
+      }).then(() => {
+        alert("Book uploaded successfully!");
+        document.getElementById("uploadForm").reset();
+      }).catch((error) => {
+        alert("Error: " + error.message);
+      });
     });
   </script>
+
 </body>
 </html>
