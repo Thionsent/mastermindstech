@@ -4,34 +4,38 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f9;
+  line-height: 1.6;
 }
 
 /* Header */
 header {
   background-color: #333;
   color: white;
-  padding: 20px;
+  padding: 20px 0;
   text-align: center;
 }
 
 header h1 {
   font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 header nav ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 header nav ul li {
-  display: inline;
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 header nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
+  transition: color 0.3s ease;
 }
 
 header nav ul li a.active,
@@ -47,11 +51,11 @@ header nav ul li a:hover {
   background-position: center;
   color: white;
   text-align: center;
-  padding: 100px 0;
+  padding: 100px 20px;
 }
 
 .hero .hero-text h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 20px;
 }
 
@@ -61,29 +65,33 @@ header nav ul li a:hover {
 }
 
 .hero .search-bar {
-  padding: 10px;
+  padding: 12px;
   width: 50%;
+  max-width: 500px;
   font-size: 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   outline: none;
+  margin-top: 10px;
 }
 
-/* Featured Books */
+/* Featured Books Section */
 .featured {
-  text-align: center;
   padding: 50px 0;
+  text-align: center;
 }
 
 .featured h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 30px;
+  color: #333;
 }
 
 .book-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  padding: 0 20px;
 }
 
 .book-grid article {
@@ -92,17 +100,20 @@ header nav ul li a:hover {
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  text-align: center;
 }
 
 .book-grid article:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 .book-grid img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .book-grid h3 {
@@ -122,12 +133,14 @@ header nav ul li a:hover {
 
 .categories h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 30px;
+  color: #333;
 }
 
 .category-grid {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
 }
@@ -136,10 +149,11 @@ header nav ul li a:hover {
   text-decoration: none;
   color: #333;
   font-size: 1.2rem;
-  padding: 10px 20px;
+  padding: 15px 30px;
   border: 2px solid transparent;
   border-radius: 5px;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .category-grid a:hover {
@@ -153,7 +167,7 @@ header nav ul li a:hover {
   background-color: #ff6f61;
   color: white;
   text-align: center;
-  padding: 50px 0;
+  padding: 50px 20px;
 }
 
 .cta h2 {
