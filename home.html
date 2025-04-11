@@ -8,6 +8,7 @@
 </head>
 <body>
 
+  <!-- Header Section -->
   <header>
     <h1>BranTech E-Library</h1>
     <nav>
@@ -22,6 +23,7 @@
     </nav>
   </header>
 
+  <!-- Main Content -->
   <main>
 
     <!-- Hero Section -->
@@ -33,35 +35,38 @@
       </div>
     </section>
 
-    <!-- Featured Books -->
+    <!-- Featured Books Section -->
     <section class="featured animate">
       <h2>Featured Reads</h2>
-     <div class="book-grid">
-  <article>
-    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - The Digital Frontier" />
-    <h3>The Digital Frontier</h3>
-    <p>by Jane Techwell</p>
-  </article>
-  <article>
-    <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - Echoes of the Past" />
-    <h3>Echoes of the Past</h3>
-    <p>by David M. Howard</p>
-  </article>
-  <article>
-    <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - A Tale of Tomorrow" />
-    <h3>A Tale of Tomorrow</h3>
-    <p>by Alicia Night</p>
-  </article>
-  <article>
-    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - Whispers of the Wild" />
-    <h3>Whispers of the Wild</h3>
-    <p>by Oliver Green</p>
-  </article>
-</div>
-
+      <div class="book-grid">
+        <!-- Book 1 -->
+        <article>
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - The Digital Frontier" />
+          <h3>The Digital Frontier</h3>
+          <p>by Jane Techwell</p>
+        </article>
+        <!-- Book 2 -->
+        <article>
+          <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - Echoes of the Past" />
+          <h3>Echoes of the Past</h3>
+          <p>by David M. Howard</p>
+        </article>
+        <!-- Book 3 -->
+        <article>
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - A Tale of Tomorrow" />
+          <h3>A Tale of Tomorrow</h3>
+          <p>by Alicia Night</p>
+        </article>
+        <!-- Book 4 -->
+        <article>
+          <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - Whispers of the Wild" />
+          <h3>Whispers of the Wild</h3>
+          <p>by Oliver Green</p>
+        </article>
+      </div>
     </section>
 
-    <!-- Categories -->
+    <!-- Categories Section -->
     <section class="categories animate">
       <h2>Explore by Category</h2>
       <div class="category-grid">
@@ -74,7 +79,7 @@
       </div>
     </section>
 
-    <!-- Call to Action -->
+    <!-- Call to Action Section -->
     <section class="cta animate">
       <h2>Unlock Unlimited Access</h2>
       <p>Create an account and explore the full collection of resources.</p>
@@ -83,6 +88,7 @@
 
   </main>
 
+  <!-- Footer Section -->
   <footer>
     <p>© 2025 BranTech E-Library. All rights reserved.</p>
     <div class="footer-links">
@@ -92,6 +98,7 @@
     </div>
   </footer>
 
+  <!-- Intersection Observer Script for Animations -->
   <script>
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
