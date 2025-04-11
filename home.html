@@ -2,119 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home - BranTech Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f7fa;
-      color: #333;
-    }
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    .dashboard {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      min-height: 100vh;
-    }
-    .sidebar {
-      background-color: #34495e;
-      padding: 20px;
-      color: white;
-    }
-    .sidebar a {
-      display: block;
-      color: white;
-      padding: 10px 0;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .sidebar a:hover {
-      background-color: #2c3e50;
-    }
-    .main-content {
-      padding: 30px;
-    }
-    .card {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    .card h3 {
-      margin: 0;
-    }
-    .stats {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .stat-box {
-      flex: 1;
-      min-width: 200px;
-      background-color: #3498db;
-      color: white;
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BranTech E-Library</title>
 </head>
 <body>
 
-<header>
-  <h1>Welcome to BranTech Dashboard</h1>
-</header>
-
-<div class="dashboard">
-  <aside class="sidebar">
-    <h3>Navigation</h3>
-    <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-    <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
-    <a href="#"><i class="fas fa-cogs"></i> Settings</a>
-    <a href="#"><i class="fas fa-envelope"></i> Messages</a>
-    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
-  </aside>
-
-  <main class="main-content">
-    <div class="card">
-      <h3>Hello, User!</h3>
-      <p>Here's a quick overview of your dashboard.</p>
-    </div>
-
-    <div class="stats">
-      <div class="stat-box">
-        <h2>24</h2>
-        <p>New Messages</p>
-      </div>
-      <div class="stat-box" style="background-color: #1abc9c;">
-        <h2>13</h2>
-        <p>Tasks Completed</p>
-      </div>
-      <div class="stat-box" style="background-color: #e67e22;">
-        <h2>8</h2>
-        <p>Pending Actions</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Latest Activity</h3>
+  <!-- Header Section -->
+  <header>
+    <h1>BranTech E-Library</h1>
+    <nav>
       <ul>
-        <li>Logged in at 9:00 AM</li>
-        <li>Completed task: Update profile</li>
-        <li>Sent message to support</li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="authors.html">Authors</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="login.html">Login/Register</a></li>
       </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section>
+    <div>
+      <img src="images/hero-banner.jpg" alt="Bookshelf background" />
+      <h2>Discover a World of Knowledge at Your Fingertips</h2>
+      <p>Welcome to BranTech E-Library – your one-stop digital hub for exploring and reading a wide variety of books online. Whether you're a student, professional, or just a curious mind, we've got something for you!</p>
+      <form action="search.html" method="get">
+        <input type="text" name="query" placeholder="Search for books..." />
+        <button type="submit">Search</button>
+      </form>
     </div>
-  </main>
-</div>
+  </section>
+
+  <!-- Featured Books Section -->
+  <section>
+    <h2>Featured Reads</h2>
+    <div>
+      <article>
+        <img src="images/book1.jpg" alt="Book 1 cover" />
+        <h3>Book Title 1</h3>
+        <p>by Author Name 1</p>
+      </article>
+      <article>
+        <img src="images/book2.jpg" alt="Book 2 cover" />
+        <h3>Book Title 2</h3>
+        <p>by Author Name 2</p>
+      </article>
+      <article>
+        <img src="images/book3.jpg" alt="Book 3 cover" />
+        <h3>Book Title 3</h3>
+        <p>by Author Name 3</p>
+      </article>
+      <article>
+        <img src="images/book4.jpg" alt="Book 4 cover" />
+        <h3>Book Title 4</h3>
+        <p>by Author Name 4</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section>
+    <h2>Explore by Category</h2>
+    <ul>
+      <li><a href="#">Fiction</a></li>
+      <li><a href="#">Science</a></li>
+      <li><a href="#">History</a></li>
+      <li><a href="#">Mystery</a></li>
+      <li><a href="#">Biographies</a></li>
+      <li><a href="#">Technology</a></li>
+    </ul>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section>
+    <h2>Unlock Unlimited Access</h2>
+    <p>Join BranTech E-Library today and explore thousands of titles for free. Your reading journey begins here.</p>
+    <a href="signup.html">Sign Up</a> or <a href="books.html">Browse Books</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 BranTech E-Library. All rights reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </nav>
+  </footer>
 
 </body>
 </html>
