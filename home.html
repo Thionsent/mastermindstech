@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Header Section -->
   <header>
     <h1>BranTech E-Library</h1>
     <nav>
@@ -23,7 +22,6 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
   <main>
 
     <!-- Hero Section -->
@@ -35,38 +33,34 @@
       </div>
     </section>
 
-    <!-- Featured Books Section -->
+    <!-- Featured Books -->
     <section class="featured animate">
       <h2>Featured Reads</h2>
       <div class="book-grid">
-        <!-- Book 1 -->
         <article>
-          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - The Digital Frontier" />
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=200&q=80" alt="Book Cover - The Digital Frontier" />
           <h3>The Digital Frontier</h3>
           <p>by Jane Techwell</p>
         </article>
-        <!-- Book 2 -->
         <article>
-          <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - Echoes of the Past" />
+          <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=200&q=80" alt="Book Cover - Echoes of the Past" />
           <h3>Echoes of the Past</h3>
           <p>by David M. Howard</p>
         </article>
-        <!-- Book 3 -->
         <article>
-          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - A Tale of Tomorrow" />
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=200&q=80" alt="Book Cover - A Tale of Tomorrow" />
           <h3>A Tale of Tomorrow</h3>
           <p>by Alicia Night</p>
         </article>
-        <!-- Book 4 -->
         <article>
-          <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Book Cover - Whispers of the Wild" />
+          <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=200&q=80" alt="Book Cover - Whispers of the Wild" />
           <h3>Whispers of the Wild</h3>
           <p>by Oliver Green</p>
         </article>
       </div>
     </section>
 
-    <!-- Categories Section -->
+    <!-- Categories -->
     <section class="categories animate">
       <h2>Explore by Category</h2>
       <div class="category-grid">
@@ -79,7 +73,13 @@
       </div>
     </section>
 
-    <!-- Call to Action Section -->
+    <!-- Available E-Books -->
+    <section class="books animate">
+      <h2>Available E-Books</h2>
+      <div id="book-list" class="book-grid"></div>
+    </section>
+
+    <!-- Call to Action -->
     <section class="cta animate">
       <h2>Unlock Unlimited Access</h2>
       <p>Create an account and explore the full collection of resources.</p>
@@ -88,7 +88,6 @@
 
   </main>
 
-  <!-- Footer Section -->
   <footer>
     <p>© 2025 BranTech E-Library. All rights reserved.</p>
     <div class="footer-links">
@@ -98,20 +97,54 @@
     </div>
   </footer>
 
-  <!-- Intersection Observer Script for Animations -->
   <script>
+    // Animate on scroll
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, {
-      threshold: 0.1
-    });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.animate').forEach(el => {
       observer.observe(el);
+    });
+
+    // Add book cards
+    const books = [
+      {
+        title: "Understanding Web Development",
+        author: "Jane Doe",
+        pdfUrl: "https://drive.google.com/uc?export=download&id=1oPl24SqWzXKJUI7dJneIQH9wpC3WmWNZ",
+        cover: "https://via.placeholder.com/150x200?text=Web+Dev"
+      },
+      {
+        title: "Learning Firebase",
+        author: "John Tech",
+        pdfUrl: "#",
+        cover: "https://via.placeholder.com/150x200?text=Coming+Soon"
+      },
+      {
+        title: "Mastering HTML & CSS",
+        author: "Alice Dev",
+        pdfUrl: "#",
+        cover: "https://via.placeholder.com/150x200?text=Coming+Soon"
+      }
+    ];
+
+    const bookList = document.getElementById("book-list");
+
+    books.forEach(book => {
+      const card = document.createElement("div");
+      card.className = "book-card";
+      card.innerHTML = `
+        <img src="${book.cover}" alt="Cover of ${book.title}">
+        <h3>${book.title}</h3>
+        <p>by ${book.author}</p>
+        <a href="${book.pdfUrl}" target="_blank">Read Book</a>
+      `;
+      bookList.appendChild(card);
     });
   </script>
 
