@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Book - BranTech E-Library</title>
+  <link rel="stylesheet" href="stylesupload.css" />
+</head>
+<body>
+  <header>
+    <h1>Upload a Book</h1>
+    <nav>
+      <a href="home.html">Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="uploadForm">
+      <label>Book Title:</label>
+      <input type="text" id="title" required />
+
+      <label>Author:</label>
+      <input type="text" id="author" required />
+
+      <label>Category:</label>
+      <input type="text" id="category" required />
+
+      <label>Google Drive Link:</label>
+      <input type="url" id="driveLink" placeholder="Paste the shareable link here" required />
+
+      <button type="submit">Upload Book</button>
+    </form>
+
+    <p id="successMsg"></p>
+  </main>
+
+  <script>
+    const uploadForm = document.getElementById('uploadForm');
+    const successMsg = document.getElementById('successMsg');
+
+    uploadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const book = {
+        title: document.getElementById('title').value,
+        author: document.getElementById('author').value,
+        category: document.getElementById('category').value,
+        driveLink: document.getElementById('driveLink').value
+      };
+
+      // Save book to localStorage (for now)
+      const books = JSON.parse(localStorage.getItem('books') || '[]');
+      books.push(book);
+      localStorage.setItem('books', JSON.stringify(books));
+
+      successMsg.textContent = 'Book uploaded successfully!';
+      uploadForm.reset();
+    });
+  </script>
+</body>
+</html>
