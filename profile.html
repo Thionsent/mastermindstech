@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile - BranTech</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Include Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <main class="profile">
+    <h2>Your Profile</h2>
+    <div class="profile-info">
+      <p><strong>Full Name:</strong> <span id="userFullName"></span></p>
+      <p><strong>Email:</strong> <span id="userEmail"></span></p>
+    </div>
+    <div class="update-form">
+      <h3>Update Profile</h3>
+      <form id="updateForm">
+        <div class="form-group">
+          <label for="newFullName">Full Name:</label>
+          <input type="text" id="newFullName" name="newFullName" required />
+        </div>
+        <button type="submit">Update</button>
+      </form>
+    </div>
+  </main>
+
+  <script type="module">
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+    import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+    const auth = getAuth();
+    const database = getDatabase();
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const userRef = ref(database, 'users/' + user.uid);
+        userRef.once('value', (snapshot) => {
+          const userData = snapshot.val();
+          document.getElementById('userFullName').textContent = userData.fullname;
+          document.getElementById('userEmail').textContent = userData.email;
+        });
+
+        document.getElementById('updateForm').addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const newFullName = document.getElementById('newFullName').value;
+          
+          if (newFullName) {
+            update(ref(database, 'users/' + user.uid), {
+              fullname: newFullName
+            }).then(() => {
+              alert('Profile updated successfully!');
+              location.reload();
+            }).catch((error) => {
+              alert('Error updating profile: ' + error.message);
+            });
+          }
+        });
+      } else {
+        window.location.href = "login.html"; // Redirect to login if no user is authenticated
+      }
+    });
+  </script>
+</body>
+</html>
